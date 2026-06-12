@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <style>
+    :root {
+      --ink: #1f2a37; --ink-soft: #5b6877; --paper: #fbfaf7; --card: #fff;
+      --line: #e3e0d8; --accent: #2b4a6e; --accent-soft: #e8eef5;
+      --good: #2e7d4f; --warn: #b3261e; --mark: #fff3bf;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink);
+      font-family: "Google Sans", Roboto, Arial, sans-serif; font-size: 13px; line-height: 1.45; }
+    .topbar { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 12px 6px; }
+    .brand { font-family: Georgia, serif; font-size: 17px; font-weight: 700; }
+    .brand b { color: var(--accent); }
+    .status { font-size: 11px; color: var(--ink-soft); }
+    .status.busy { color: var(--accent); } .status.err { color: var(--warn); }
+    .tabs { display: flex; gap: 2px; padding: 0 8px; border-bottom: 1px solid var(--line); }
+    .tab { flex: 1; padding: 7px 2px; border: none; background: none; font: inherit; font-size: 12px;
+      color: var(--ink-soft); cursor: pointer; border-bottom: 2px solid transparent; }
+    .tab.active { color: var(--accent); font-weight: 600; border-bottom-color: var(--accent); }
+    .panel { display: none; padding: 12px; }
+    .panel.active { display: block; }
+    input, textarea, select { width: 100%; padding: 7px 9px; margin-bottom: 8px;
+      border: 1px solid var(--line); border-radius: 6px; background: var(--card); font: inherit; color: var(--ink); }
+    textarea { resize: vertical; }
+    .field-label { display: block; font-size: 11px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .5px; color: var(--ink-soft); margin: 4px 0; }
+    .row { display: flex; gap: 6px; } .row > * { margin-bottom: 8px; } .row input, .row select { flex: 1; }
+    .btn { padding: 7px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--card);
+      font: inherit; font-size: 12px; cursor: pointer; white-space: nowrap; }
+    .btn:hover { border-color: var(--accent); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+    .btn.full { width: 100%; margin-bottom: 8px; }
+    .btn:disabled { opacity: .55; cursor: default; }
+    .btn.small { padding: 4px 8px; font-size: 11px; }
+    .hint { font-size: 11px; color: var(--ink-soft); margin: 6px 0; }
+    .divider { border: none; border-top: 1px solid var(--line); margin: 14px 0; }
+    .sub-head { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px;
+      color: var(--accent); margin: 12px 0 4px; }
+    .phrase { padding: 7px 9px; margin-bottom: 5px; background: var(--card); border: 1px solid var(--line);
+      border-radius: 6px; cursor: pointer; }
+    .phrase:hover { border-color: var(--accent); background: var(--accent-soft); }
+    .phrase .ph { color: var(--accent); font-style: italic; }
+    .empty { color: var(--ink-soft); font-style: italic; padding: 8px 0; }
+    .option-card { background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+      padding: 9px; margin-bottom: 8px; }
+    .opt-actions { display: flex; gap: 6px; margin-top: 7px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip { padding: 4px 10px; background: var(--accent-soft); border: 1px solid var(--line);
+      border-radius: 999px; font-size: 12px; cursor: pointer; }
+    .lib-list { list-style: none; margin: 8px 0; padding: 0; }
+    .lib-list li { display: flex; justify-content: space-between; align-items: center; gap: 8px;
+      background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 6px 9px;
+      margin-bottom: 5px; font-size: 12px; }
+    .lib-list .meta { color: var(--ink-soft); font-size: 11px; }
+    .lib-list .rm { border: none; background: none; color: var(--warn); cursor: pointer; font-size: 14px; }
+    .score-card { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent);
+      border-radius: 6px; padding: 9px; margin: 8px 0; }
+    .score-card .big { font-size: 22px; font-weight: 700; }
+    .score-card.ok { border-left-color: var(--good); } .score-card.high { border-left-color: var(--warn); }
+    .match { background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+      padding: 8px 9px; margin-bottom: 6px; }
+    .match .src { font-size: 11px; font-weight: 600; color: var(--accent); }
+    .match .snippet { background: var(--mark); padding: 1px 3px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span class="brand">Scholar<b>Kit</b></span>
+    <span id="status" class="status"></span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="phrases">Phrases</button>
+    <button class="tab" data-tab="rewrite">Rewrite</button>
+    <button class="tab" data-tab="similarity">Similarity</button>
+    <button class="tab" data-tab="settings">Settings</button>
+  </div>
+
+  <div id="tab-phrases" class="panel active">
+    <input id="phrase-search" type="search" placeholder="Search phrases..." autocomplete="off">
+    <select id="phrase-group"></select>
+    <div id="phrase-list"></div>
+    <p class="hint">Click a phrase to insert it at your cursor. Replace the [bracketed] parts with your own content.</p>
+  </div>
+
+  <div id="tab-rewrite" class="panel">
+    <label class="field-label">Text to rewrite</label>
+    <textarea id="rw-input" rows="5" placeholder="Paste text, or select text in the doc and click Grab selection."></textarea>
+    <div class="row">
+      <button id="rw-grab" class="btn">Grab selection</button>
+      <select id="rw-mode">
+        <option value="paraphrase">Academic paraphrase</option>
+        <option value="formal">More formal</option>
+        <option value="simplify">Simplify</option>
+        <option value="concise">More concise</option>
+      </select>
+    </div>
+    <button id="rw-go" class="btn primary full">Rewrite (3 options)</button>
+    <div id="rw-results"></div>
+    <hr class="divider">
+    <label class="field-label">Word choice</label>
+    <div class="row">
+      <input id="wc-input" type="text" placeholder="Word or short phrase" autocomplete="off">
+      <button id="wc-go" class="btn">Suggest</button>
+    </div>
+    <div id="wc-results" class="chips"></div>
+  </div>
+
+  <div id="tab-similarity" class="panel">
+    <label class="field-label">Reference library</label>
+    <p class="hint">Add reference material, then check your doc for overlapping passages. The library lives in this sidebar for the current session.</p>
+    <input id="sim-docurl" type="text" placeholder="Paste a Google Doc link and press Add" autocomplete="off">
+    <button id="sim-adddoc" class="btn full">Add Google Doc</button>
+    <textarea id="sim-paste" rows="4" placeholder="Or paste reference text here (e.g. copied from a PDF)..."></textarea>
+    <button id="sim-addpaste" class="btn full">Add pasted text</button>
+    <ul id="sim-library" class="lib-list"></ul>
+    <button id="sim-check" class="btn primary full">Check document against library</button>
+    <div id="sim-summary"></div>
+    <div id="sim-matches"></div>
+  </div>
+
+  <div id="tab-settings" class="panel">
+    <label class="field-label">Gemini API key</label>
+    <input id="set-key" type="password" placeholder="Paste your key from aistudio.google.com" autocomplete="off">
+    <label class="field-label">Model name</label>
+    <input id="set-model" type="text" placeholder="gemini-2.5-flash" autocomplete="off">
+    <div class="row">
+      <button id="set-save" class="btn primary">Save</button>
+      <button id="set-test" class="btn">Test connection</button>
+    </div>
+    <p id="set-msg" class="hint"></p>
+    <p class="hint">The key is saved to your Google account's script properties, visible only to you. Phrases and Similarity work without a key.</p>
+  </div>
+
+<script>
+"use strict";
+
+/* IMPORTANT: set this to YOUR GitHub Pages URL for phrasebank.json */
+var PHRASEBANK_URL = "https://raiderj77.github.io/scholarkit/word-addin/phrasebank.json";
+
+var PB = null;
+var LIBRARY = [];
+var NGRAM = 5;
+
+function $(id) { return document.getElementById(id); }
+function setStatus(m, c) { var el = $("status"); el.textContent = m || ""; el.className = "status" + (c ? " " + c : ""); }
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, function (ch) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch];
+  });
+}
+function gs(fn) {
+  var args = Array.prototype.slice.call(arguments, 1);
+  return new Promise(function (resolve, reject) {
+    var runner = google.script.run
+      .withSuccessHandler(resolve)
+      .withFailureHandler(function (e) { reject(new Error(e.message || String(e))); });
+    runner[fn].apply(runner, args);
+  });
+}
+
+/* tabs */
+document.querySelectorAll(".tab").forEach(function (t) {
+  t.addEventListener("click", function () {
+    document.querySelectorAll(".tab").forEach(function (x) { x.classList.remove("active"); });
+    document.querySelectorAll(".panel").forEach(function (p) { p.classList.remove("active"); });
+    t.classList.add("active");
+    $("tab-" + t.dataset.tab).classList.add("active");
+  });
+});
+
+/* phrases */
+fetch(PHRASEBANK_URL)
+  .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+  .then(function (data) {
+    PB = data;
+    var sel = $("phrase-group");
+    sel.innerHTML = '<option value="">All sections</option>';
+    data.groups.forEach(function (g) {
+      var o = document.createElement("option");
+      o.value = g.id; o.textContent = g.name;
+      sel.appendChild(o);
+    });
+    sel.addEventListener("change", renderPhrases);
+    $("phrase-search").addEventListener("input", renderPhrases);
+    renderPhrases();
+  })
+  .catch(function (e) {
+    $("phrase-list").innerHTML = '<p class="empty">Could not load the phrasebank (' + escapeHtml(e.message) +
+      "). Check the PHRASEBANK_URL at the top of the Sidebar script and that your GitHub Pages site is live.</p>";
+  });
+
+function renderPhrases() {
+  if (!PB) return;
+  var q = $("phrase-search").value.trim().toLowerCase();
+  var gid = $("phrase-group").value;
+  var list = $("phrase-list");
+  list.innerHTML = "";
+  var shown = 0;
+  PB.groups.forEach(function (g) {
+    if (gid && g.id !== gid) return;
+    g.subs.forEach(function (sub) {
+      var hits = sub.phrases.filter(function (p) { return !q || p.toLowerCase().indexOf(q) !== -1; });
+      if (!hits.length) return;
+      var head = document.createElement("div");
+      head.className = "sub-head";
+      head.textContent = g.name + " / " + sub.name;
+      list.appendChild(head);
+      hits.forEach(function (p) {
+        var d = document.createElement("div");
+        d.className = "phrase";
+        d.innerHTML = escapeHtml(p).replace(/\[([^\]]+)\]/g, '<span class="ph">[$1]</span>');
+        d.addEventListener("click", function () {
+          gs("insertAtCursor", p + " ")
+            .then(function () { setStatus("Inserted", "busy"); setTimeout(function () { setStatus(""); }, 1200); })
+            .catch(function (e) { setStatus(e.message, "err"); });
+        });
+        list.appendChild(d);
+        shown++;
+      });
+    });
+  });
+  if (!shown) list.innerHTML = '<p class="empty">No phrases match that search.</p>';
+}
+
+/* rewrite */
+var REWRITE_PROMPTS = {
+  paraphrase: "Rewrite the text in formal academic English suitable for a research paper. Preserve the meaning exactly. Vary sentence structure and vocabulary. Do not add new claims or citations.",
+  formal: "Rewrite the text in a more formal, scholarly register. Preserve the meaning exactly. Remove colloquialisms and contractions.",
+  simplify: "Rewrite the text in clearer, simpler academic English. Shorter sentences, plainer vocabulary, same meaning. Do not lose any substantive content.",
+  concise: "Rewrite the text to be significantly more concise while preserving every substantive point. Cut redundancy and filler."
+};
+
+function geminiJson(prompt) {
+  return gs("callGemini", prompt).then(function (txt) { return JSON.parse(txt); });
+}
+
+$("rw-grab").addEventListener("click", function () {
+  gs("getSelectedText").then(function (t) {
+    if (!t || !t.trim()) { setStatus("Nothing selected in the document.", "err"); return; }
+    $("rw-input").value = t.trim();
+    setStatus("");
+  }).catch(function (e) { setStatus(e.message, "err"); });
+});
+
+$("rw-go").addEventListener("click", function () {
+  var text = $("rw-input").value.trim();
+  if (!text) { setStatus("Add some text first.", "err"); return; }
+  if (text.length > 4000) { setStatus("Keep it under ~4000 characters per pass.", "err"); return; }
+  var prompt = "You are an academic writing assistant. " + REWRITE_PROMPTS[$("rw-mode").value] +
+    "\n\nReturn ONLY a JSON array of exactly 3 strings. Each string is one complete rewrite of the full text. No keys, no commentary, no markdown.\n\nText:\n" + text;
+  runBusy($("rw-go"), "Rewriting...", geminiJson(prompt).then(function (arr) {
+    if (!Array.isArray(arr)) throw new Error("Unexpected response shape.");
+    renderOptions(arr.slice(0, 3));
+  }));
+});
+
+function renderOptions(options) {
+  var box = $("rw-results");
+  box.innerHTML = "";
+  options.forEach(function (opt) {
+    var card = document.createElement("div");
+    card.className = "option-card";
+    var p = document.createElement("div");
+    p.textContent = opt;
+    var actions = document.createElement("div");
+    actions.className = "opt-actions";
+    actions.appendChild(makeBtn("Replace selection", function () {
+      gs("replaceSelection", opt)
+        .then(function () { setStatus("Replaced", "busy"); setTimeout(function () { setStatus(""); }, 1200); })
+        .catch(function (e) { setStatus(e.message, "err"); });
+    }));
+    actions.appendChild(makeBtn("Insert at cursor", function () {
+      gs("insertAtCursor", opt).catch(function (e) { setStatus(e.message, "err"); });
+    }));
+    card.appendChild(p);
+    card.appendChild(actions);
+    box.appendChild(card);
+  });
+}
+
+function makeBtn(label, fn) {
+  var b = document.createElement("button");
+  b.className = "btn small";
+  b.textContent = label;
+  b.addEventListener("click", fn);
+  return b;
+}
+
+function runBusy(btn, label, promise) {
+  var orig = btn.textContent;
+  btn.disabled = true; btn.textContent = label; setStatus(label, "busy");
+  promise.then(function () { setStatus(""); })
+    .catch(function (e) { setStatus(e.message, "err"); })
+    .finally(function () { btn.disabled = false; btn.textContent = orig; });
+}
+
+$("wc-go").addEventListener("click", function () {
+  var w = $("wc-input").value.trim();
+  if (!w) return;
+  var prompt = "Suggest 8 academic alternatives for the word or phrase below, suitable for a formal research paper. Single words or short phrases only. Return ONLY a JSON array of strings.\n\nWord or phrase: " + w;
+  runBusy($("wc-go"), "Thinking...", geminiJson(prompt).then(function (arr) {
+    if (!Array.isArray(arr)) throw new Error("Unexpected response shape.");
+    var box = $("wc-results");
+    box.innerHTML = "";
+    arr.forEach(function (s) {
+      var c = document.createElement("button");
+      c.className = "chip";
+      c.textContent = s;
+      c.addEventListener("click", function () {
+        gs("insertAtCursor", s).catch(function (e) { setStatus(e.message, "err"); });
+      });
+      box.appendChild(c);
+    });
+  }));
+});
+
+/* similarity */
+$("sim-adddoc").addEventListener("click", function () {
+  var u = $("sim-docurl").value.trim();
+  if (!u) return;
+  runBusy($("sim-adddoc"), "Loading...", gs("getDocTextById", u).then(function (d) {
+    LIBRARY.push({ name: d.name, words: tokenize(d.text) });
+    $("sim-docurl").value = "";
+    renderLibrary();
+  }));
+});
+
+$("sim-addpaste").addEventListener("click", function () {
+  var t = $("sim-paste").value.trim();
+  if (!t) return;
+  var name = "Pasted text " + (LIBRARY.length + 1) + " (" + t.split(/\s+/).length + " words)";
+  LIBRARY.push({ name: name, words: tokenize(t) });
+  $("sim-paste").value = "";
+  renderLibrary();
+});
+
+function renderLibrary() {
+  var ul = $("sim-library");
+  ul.innerHTML = "";
+  if (!LIBRARY.length) {
+    ul.innerHTML = '<li style="border:none;background:none;" class="empty">No reference material yet.</li>';
+    return;
+  }
+  LIBRARY.forEach(function (doc, i) {
+    var li = document.createElement("li");
+    var left = document.createElement("span");
+    left.innerHTML = escapeHtml(doc.name) + ' <span class="meta">(' + doc.words.length.toLocaleString() + " words)</span>";
+    var rm = document.createElement("button");
+    rm.className = "rm"; rm.textContent = "\u00d7"; rm.title = "Remove";
+    rm.addEventListener("click", function () { LIBRARY.splice(i, 1); renderLibrary(); });
+    li.appendChild(left); li.appendChild(rm);
+    ul.appendChild(li);
+  });
+}
+renderLibrary();
+
+function tokenize(t) {
+  return t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean);
+}
+function buildShingleSet(words) {
+  var set = {};
+  for (var i = 0; i + NGRAM <= words.length; i++) set[words.slice(i, i + NGRAM).join(" ")] = true;
+  return set;
+}
+function spansFromMask(mask) {
+  var spans = [], start = -1;
+  for (var i = 0; i <= mask.length; i++) {
+    if (i < mask.length && mask[i]) { if (start === -1) start = i; }
+    else if (start !== -1) { spans.push([start, i - 1]); start = -1; }
+  }
+  return spans;
+}
+
+$("sim-check").addEventListener("click", function () {
+  if (!LIBRARY.length) { setStatus("Add reference material first.", "err"); return; }
+  runBusy($("sim-check"), "Checking...", gs("getDocText").then(function (draft) {
+    var words = tokenize(draft);
+    if (words.length < NGRAM) throw new Error("The document is too short to check.");
+    var globalMatched = new Array(words.length).fill(false);
+    var perSource = [];
+    LIBRARY.forEach(function (doc) {
+      var refSet = buildShingleSet(doc.words);
+      var matched = new Array(words.length).fill(false);
+      for (var i = 0; i + NGRAM <= words.length; i++) {
+        if (refSet[words.slice(i, i + NGRAM).join(" ")]) {
+          for (var j = i; j < i + NGRAM; j++) { matched[j] = true; globalMatched[j] = true; }
+        }
+      }
+      perSource.push({ name: doc.name, matched: matched, count: matched.filter(Boolean).length });
+    });
+    var overall = globalMatched.filter(Boolean).length / words.length;
+    renderSimilarity(overall, perSource, words);
+  }));
+});
+
+function renderSimilarity(overall, perSource, words) {
+  var pct = Math.round(overall * 1000) / 10;
+  var cls = pct < 5 ? "ok" : (pct < 15 ? "" : "high");
+  $("sim-summary").innerHTML =
+    '<div class="score-card ' + cls + '"><div class="big">' + pct + "%</div>" +
+    "<div>of your draft overlaps your reference material in runs of " + NGRAM + "+ identical words.</div></div>";
+  var box = $("sim-matches");
+  box.innerHTML = "";
+  var shown = 0;
+  perSource.forEach(function (src) {
+    if (!src.count) return;
+    spansFromMask(src.matched).forEach(function (span) {
+      if (shown >= 40) return;
+      var snippet = words.slice(span[0], span[1] + 1).join(" ");
+      var div = document.createElement("div");
+      div.className = "match";
+      div.innerHTML = '<div class="src">' + escapeHtml(src.name) + "</div>" +
+        '<div><span class="snippet">' + escapeHtml(snippet) + "</span></div>";
+      box.appendChild(div);
+      shown++;
+    });
+  });
+  if (!shown) box.innerHTML = '<p class="hint">No overlapping passages of ' + NGRAM + '+ words found. Clean.</p>';
+  else if (shown >= 40) {
+    var more = document.createElement("p");
+    more.className = "hint";
+    more.textContent = "Showing the first 40 matches. Fix these, then run the check again.";
+    box.appendChild(more);
+  }
+}
+
+/* settings */
+gs("getSettings").then(function (s) {
+  $("set-model").value = s.model;
+  if (s.hasKey) $("set-msg").textContent = "A key is already saved.";
+}).catch(function () {});
+
+$("set-save").addEventListener("click", function () {
+  gs("saveSettings", $("set-key").value.trim(), $("set-model").value.trim())
+    .then(function () { $("set-msg").textContent = "Saved."; $("set-key").value = ""; })
+    .catch(function (e) { $("set-msg").textContent = "Failed: " + e.message; });
+});
+
+$("set-test").addEventListener("click", function () {
+  var save = $("set-key").value.trim()
+    ? gs("saveSettings", $("set-key").value.trim(), $("set-model").value.trim())
+    : Promise.resolve();
+  $("set-msg").textContent = "Testing...";
+  save.then(function () { return geminiJson('Return ONLY the JSON array ["ok"].'); })
+    .then(function () { $("set-msg").textContent = "Connected. The Rewrite tab is ready."; $("set-key").value = ""; })
+    .catch(function (e) { $("set-msg").textContent = "Failed: " + e.message; });
+});
+</script>
+</body>
+</html>

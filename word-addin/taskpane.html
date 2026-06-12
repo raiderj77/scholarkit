@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScholarKit</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+  <link rel="stylesheet" href="taskpane.css">
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">Scholar<span class="brand-accent">Kit</span></span>
+    <span id="status" class="status"></span>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="phrases">Phrases</button>
+    <button class="tab" data-tab="rewrite">Rewrite</button>
+    <button class="tab" data-tab="similarity">Similarity</button>
+    <button class="tab" data-tab="settings">Settings</button>
+  </nav>
+
+  <!-- PHRASES -->
+  <section id="tab-phrases" class="panel active">
+    <input id="phrase-search" type="search" placeholder="Search 476 phrases..." autocomplete="off">
+    <select id="phrase-group"></select>
+    <div id="phrase-list" class="phrase-list"></div>
+    <p class="hint">Click a phrase to insert it at your cursor. Replace the [bracketed] parts with your own content.</p>
+  </section>
+
+  <!-- REWRITE -->
+  <section id="tab-rewrite" class="panel">
+    <label class="field-label" for="rw-input">Text to rewrite</label>
+    <textarea id="rw-input" rows="5" placeholder="Paste text here, or select text in your document and click Grab selection."></textarea>
+    <div class="row">
+      <button id="rw-grab" class="btn ghost">Grab selection</button>
+      <select id="rw-mode">
+        <option value="paraphrase">Academic paraphrase</option>
+        <option value="formal">More formal</option>
+        <option value="simplify">Simplify</option>
+        <option value="concise">More concise</option>
+      </select>
+    </div>
+    <button id="rw-go" class="btn primary full">Rewrite (3 options)</button>
+    <div id="rw-results"></div>
+
+    <hr class="divider">
+
+    <label class="field-label" for="wc-input">Word choice</label>
+    <div class="row">
+      <input id="wc-input" type="text" placeholder="Word or short phrase" autocomplete="off">
+      <button id="wc-go" class="btn">Suggest</button>
+    </div>
+    <div id="wc-results" class="chips"></div>
+  </section>
+
+  <!-- SIMILARITY -->
+  <section id="tab-similarity" class="panel">
+    <label class="field-label">Reference library</label>
+    <p class="hint">Add the PDFs, Word docs, or text files you are citing. ScholarKit checks your draft against them for overlapping passages. Everything stays in your browser.</p>
+    <input id="sim-files" type="file" multiple accept=".pdf,.docx,.txt">
+    <ul id="sim-library" class="lib-list"></ul>
+    <button id="sim-check" class="btn primary full">Check document against library</button>
+    <div id="sim-summary"></div>
+    <div id="sim-matches"></div>
+    <p class="hint">To clear highlights afterward: select all text in Word, then Home &gt; Text Highlight Color &gt; No Color.</p>
+  </section>
+
+  <!-- SETTINGS -->
+  <section id="tab-settings" class="panel">
+    <label class="field-label" for="set-key">Gemini API key</label>
+    <input id="set-key" type="password" placeholder="Paste your key from aistudio.google.com" autocomplete="off">
+    <label class="field-label" for="set-model">Model name</label>
+    <input id="set-model" type="text" placeholder="gemini-2.5-flash" autocomplete="off">
+    <div class="row">
+      <button id="set-save" class="btn primary">Save</button>
+      <button id="set-test" class="btn ghost">Test connection</button>
+    </div>
+    <p id="set-msg" class="hint"></p>
+    <p class="hint">Your key is stored only in this browser (localStorage) and is sent only to Google's Gemini API. The Phrases and Similarity tabs work without a key.</p>
+  </section>
+
+  <script src="taskpane.js"></script>
+</body>
+</html>

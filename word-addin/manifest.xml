@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>721728cf-cae7-4fe7-898e-8f0b3a12a57f</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>ScholarKit</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="ScholarKit"/>
+  <Description DefaultValue="Academic phrasebank, paraphrasing, word choice, and similarity checking against your own reference library."/>
+  <IconUrl DefaultValue="https://raiderj77.github.io/scholarkit/word-addin/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://raiderj77.github.io/scholarkit/word-addin/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://raiderj77.github.io/scholarkit/"/>
+  <AppDomains>
+    <AppDomain>https://raiderj77.github.io</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://raiderj77.github.io/scholarkit/word-addin/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <FunctionFile resid="SK.Taskpane.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="SK.Group1">
+                <Label resid="SK.Group1Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="SK.Icon16"/>
+                  <bt:Image size="32" resid="SK.Icon32"/>
+                  <bt:Image size="80" resid="SK.Icon80"/>
+                </Icon>
+                <Control xsi:type="Button" id="SK.OpenPaneButton">
+                  <Label resid="SK.OpenPane.Label"/>
+                  <Supertip>
+                    <Title resid="SK.OpenPane.Label"/>
+                    <Description resid="SK.OpenPane.Tip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="SK.Icon16"/>
+                    <bt:Image size="32" resid="SK.Icon32"/>
+                    <bt:Image size="80" resid="SK.Icon80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>SKPane</TaskpaneId>
+                    <SourceLocation resid="SK.Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="SK.Icon16" DefaultValue="https://raiderj77.github.io/scholarkit/word-addin/assets/icon-16.png"/>
+        <bt:Image id="SK.Icon32" DefaultValue="https://raiderj77.github.io/scholarkit/word-addin/assets/icon-32.png"/>
+        <bt:Image id="SK.Icon80" DefaultValue="https://raiderj77.github.io/scholarkit/word-addin/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="SK.Taskpane.Url" DefaultValue="https://raiderj77.github.io/scholarkit/word-addin/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="SK.Group1Label" DefaultValue="ScholarKit"/>
+        <bt:String id="SK.OpenPane.Label" DefaultValue="Open ScholarKit"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="SK.OpenPane.Tip" DefaultValue="Open the ScholarKit writing pane: phrasebank, paraphrasing, word choice, and similarity checking."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

@@ -1,0 +1,833 @@
+{
+  "version": "1.0",
+  "note": "Original phrase templates written for ScholarKit. Replace [bracketed] placeholders with your own content.",
+  "groups": [
+    {
+      "id": "abstract",
+      "name": "Abstract",
+      "subs": [
+        {
+          "name": "Background and purpose",
+          "phrases": [
+            "[Topic] has received growing attention in [field], yet [aspect] remains poorly understood.",
+            "This study examines the relationship between [X] and [Y] in [population or setting].",
+            "The purpose of this study was to evaluate [intervention or variable] among [population].",
+            "Despite extensive work on [topic], little is known about [specific gap].",
+            "This paper addresses the question of whether [X] influences [Y] under [conditions].",
+            "We investigated how [factor] shapes [outcome] in the context of [setting].",
+            "The present study was designed to test the hypothesis that [hypothesis].",
+            "This review synthesizes current evidence on [topic] published between [year] and [year]."
+          ]
+        },
+        {
+          "name": "Methods in brief",
+          "phrases": [
+            "Data were collected from [N] participants using [instrument or method].",
+            "A [design type] design was used to compare [group A] with [group B].",
+            "Participants completed [measures] at baseline and at [time point] follow-up.",
+            "We analyzed [data source] using [analytic approach].",
+            "Semi-structured interviews were conducted with [N] [participants] and analyzed thematically.",
+            "A systematic search of [databases] identified [N] studies meeting inclusion criteria."
+          ]
+        },
+        {
+          "name": "Key results and conclusion",
+          "phrases": [
+            "Results indicated that [finding], with [statistic or effect size].",
+            "Participants in the [condition] group showed significantly greater [outcome] than controls.",
+            "Findings suggest that [interpretation], although [caveat].",
+            "These results highlight the importance of [factor] in [process or outcome].",
+            "The findings have implications for [practice, policy, or theory].",
+            "Further research is needed to determine whether [open question].",
+            "Taken together, the evidence supports [conclusion] while underscoring the need for [next step]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "introduction",
+      "name": "Introduction",
+      "subs": [
+        {
+          "name": "Establishing importance",
+          "phrases": [
+            "[Topic] is a central concern in [field] because [reason].",
+            "Over the past [number] decades, [phenomenon] has become an increasingly visible issue in [context].",
+            "An estimated [statistic] of [population] experience [condition or issue] each year.",
+            "The growing prevalence of [issue] has prompted renewed interest in [response or approach].",
+            "Understanding [process] is essential for [practical or theoretical goal].",
+            "[Topic] carries significant consequences for [stakeholders], including [examples].",
+            "Few issues in [field] have generated as much debate as [topic].",
+            "Recent developments in [area] have made it possible to examine [question] with greater precision.",
+            "The economic and social costs of [problem] are substantial, with estimates ranging from [low] to [high].",
+            "[Concept] plays a key role in [process], shaping outcomes such as [examples]."
+          ]
+        },
+        {
+          "name": "Identifying the gap",
+          "phrases": [
+            "However, existing research has largely overlooked [aspect].",
+            "To date, few studies have examined [X] in [population or setting].",
+            "Much of the prior work in this area has focused on [A], leaving [B] comparatively unexplored.",
+            "The evidence on [topic] remains mixed, with some studies reporting [finding] and others finding [contrary finding].",
+            "Previous studies have been limited by [limitation], which constrains the conclusions that can be drawn.",
+            "A key unanswered question is whether [question].",
+            "While [X] is well documented, the mechanisms linking [X] to [Y] are not yet clear.",
+            "Little attention has been paid to how [factor] operates in [specific context].",
+            "Existing measures of [construct] were developed for [original population] and may not generalize to [target population].",
+            "No study to our knowledge has directly compared [A] with [B] in [setting].",
+            "The literature offers limited guidance on [practical question].",
+            "It remains unclear to what extent [finding] holds across [conditions or groups]."
+          ]
+        },
+        {
+          "name": "Stating aims and questions",
+          "phrases": [
+            "The aim of this study was to [aim].",
+            "This study sought to address this gap by [approach].",
+            "The present paper examines [question] using [data or method].",
+            "Specifically, we asked whether [research question].",
+            "Our first objective was to [objective one]; our second was to [objective two].",
+            "This study extends prior work by [extension].",
+            "We tested the hypothesis that [hypothesis].",
+            "The central research question guiding this study was: [question]?",
+            "In this paper, we develop and test a model of [process].",
+            "Building on [framework], we examine how [X] relates to [Y].",
+            "This study contributes to the literature in three ways. First, [contribution]. Second, [contribution]. Third, [contribution].",
+            "We focus on [population or case] because [justification]."
+          ]
+        },
+        {
+          "name": "Significance of the study",
+          "phrases": [
+            "Addressing this question matters because [reason].",
+            "Findings from this study can inform [practice, policy, or intervention design].",
+            "A clearer understanding of [process] would allow practitioners to [practical benefit].",
+            "This work has theoretical significance for [framework or debate].",
+            "By identifying [factor], this study may help reduce [problem].",
+            "The results are relevant to ongoing policy discussions about [issue].",
+            "Clarifying the role of [variable] is a necessary step toward [larger goal].",
+            "This study responds to recent calls for research on [topic]."
+          ]
+        },
+        {
+          "name": "Outlining the paper",
+          "phrases": [
+            "The remainder of this paper is organized as follows.",
+            "Section [number] reviews the relevant literature on [topic].",
+            "We begin by situating the study within [framework or literature].",
+            "Next, we describe the methods used to [task].",
+            "The results are then presented in [number] parts: [part one] and [part two].",
+            "We conclude by discussing implications for [audience or field] and directions for future research.",
+            "First, we define key terms. Second, we present the study design. Finally, we report and interpret the findings.",
+            "Throughout the paper, the term [term] is used to refer to [definition]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "litreview",
+      "name": "Literature Review",
+      "subs": [
+        {
+          "name": "Introducing sources",
+          "phrases": [
+            "[Author] ([year]) argues that [claim].",
+            "In an influential study, [Author] ([year]) demonstrated that [finding].",
+            "According to [Author] ([year]), [summary of position].",
+            "[Author] ([year]) was among the first to examine [topic].",
+            "Early work by [Author] ([year]) established that [foundational finding].",
+            "More recently, [Author] ([year]) extended this line of research by [contribution].",
+            "[Author] and colleagues ([year]) conducted a [study type] involving [sample].",
+            "Drawing on [theory], [Author] ([year]) proposed that [proposition].",
+            "A meta-analysis by [Author] ([year]) pooled results from [N] studies and found [finding].",
+            "In a qualitative study of [population], [Author] ([year]) identified [themes]."
+          ]
+        },
+        {
+          "name": "Reporting findings",
+          "phrases": [
+            "[Author] ([year]) found that [finding].",
+            "Their results showed a [direction] association between [X] and [Y].",
+            "Participants who [condition] were more likely to [outcome] ([Author], [year]).",
+            "The study reported that [percentage] of [sample] experienced [outcome].",
+            "Findings indicated that [intervention] reduced [outcome] by [amount].",
+            "This effect was strongest among [subgroup].",
+            "The association held after controlling for [covariates].",
+            "Similar results have been reported in [other settings or populations] ([citations]).",
+            "Evidence from longitudinal studies suggests that [X] precedes [Y] ([citations]).",
+            "Several trials have shown modest but consistent effects of [intervention] on [outcome] ([citations]).",
+            "Qualitative accounts describe [phenomenon] as [characterization] ([citations]).",
+            "Replication attempts have produced [consistent or inconsistent] results ([citations])."
+          ]
+        },
+        {
+          "name": "Synthesizing across studies",
+          "phrases": [
+            "Taken together, these studies suggest that [synthesis].",
+            "A consistent theme across this literature is [theme].",
+            "Across diverse samples and methods, researchers have converged on the finding that [finding].",
+            "The weight of the evidence points toward [conclusion].",
+            "Three strands of research are relevant here: [strand one], [strand two], and [strand three].",
+            "While these studies differ in [dimension], they share a common emphasis on [shared element].",
+            "Findings in this area can be grouped into [number] broad categories.",
+            "The literature thus offers strong support for [claim one] but only mixed support for [claim two].",
+            "Comparatively little of this work has addressed [neglected aspect].",
+            "These findings collectively raise the question of [question]."
+          ]
+        },
+        {
+          "name": "Critiquing prior work",
+          "phrases": [
+            "However, this conclusion rests largely on [limited evidence type].",
+            "A limitation of these studies is their reliance on [method or sample].",
+            "Most of this research has been conducted in [context], which limits generalizability to [other context].",
+            "Small sample sizes constrain the statistical power of much of this work.",
+            "Few of these studies controlled for [confound], leaving open the possibility that [alternative explanation].",
+            "The cross-sectional designs used in prior studies preclude causal inference.",
+            "Measurement of [construct] has varied widely, complicating comparisons across studies.",
+            "Findings may be subject to [bias type], given that [reason].",
+            "Notably, null and negative findings appear underrepresented in this literature.",
+            "These accounts, while informative, tend to conflate [concept A] with [concept B].",
+            "It is difficult to disentangle the effects of [X] from those of [Y] in these designs.",
+            "Such conclusions should be interpreted cautiously in light of [limitation]."
+          ]
+        },
+        {
+          "name": "Positioning your study",
+          "phrases": [
+            "The present study addresses these limitations by [approach].",
+            "Building on this foundation, we examine [focus].",
+            "Unlike prior work, this study [point of difference].",
+            "We extend this literature in two directions: [direction one] and [direction two].",
+            "This study is, to our knowledge, the first to [novel contribution].",
+            "In contrast to earlier designs, our approach allows us to [methodological advantage].",
+            "We draw on [framework] to organize and interpret these relationships.",
+            "Our study complements existing work by focusing on [underexamined aspect]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "methods",
+      "name": "Methods",
+      "subs": [
+        {
+          "name": "Study design",
+          "phrases": [
+            "This study used a [design type] design.",
+            "We conducted a [cross-sectional/longitudinal/experimental] study of [population] in [setting].",
+            "A mixed-methods approach was adopted, combining [quantitative element] with [qualitative element].",
+            "The study was designed as a [randomized controlled trial/quasi-experiment/case study] examining [question].",
+            "Data were drawn from [dataset or source], a [description of source].",
+            "The study protocol was approved by [institution or board] prior to data collection.",
+            "We followed [reporting guideline] in designing and reporting this study.",
+            "The design allowed us to compare [groups or conditions] while holding [factor] constant."
+          ]
+        },
+        {
+          "name": "Participants and sampling",
+          "phrases": [
+            "Participants were [N] [description] recruited from [source].",
+            "Eligible participants were those who [inclusion criteria].",
+            "Individuals were excluded if they [exclusion criteria].",
+            "A [sampling strategy] sampling strategy was used to ensure [goal].",
+            "The final sample consisted of [N] participants ([demographic summary]).",
+            "Of the [N] individuals invited, [n] agreed to participate, yielding a response rate of [percentage].",
+            "Participants ranged in age from [min] to [max] years (M = [mean], SD = [sd]).",
+            "Recruitment continued until [stopping criterion, e.g., thematic saturation] was reached.",
+            "All participants provided informed consent before taking part.",
+            "Participants received [compensation] for their time."
+          ]
+        },
+        {
+          "name": "Materials and measures",
+          "phrases": [
+            "[Construct] was measured using the [instrument name] ([Author], [year]).",
+            "The [instrument] consists of [N] items rated on a [scale description].",
+            "Higher scores indicate [interpretation].",
+            "The measure has demonstrated good reliability and validity in [population] ([citation]).",
+            "Internal consistency in the present sample was acceptable ([reliability statistic]).",
+            "Demographic information was collected via a brief questionnaire covering [variables].",
+            "The interview guide covered [number] domains: [list of domains].",
+            "Items were adapted from [source] to fit the [context] setting.",
+            "[Variable] was operationalized as [operational definition]."
+          ]
+        },
+        {
+          "name": "Procedure",
+          "phrases": [
+            "Data were collected between [start date] and [end date].",
+            "Participants first completed [task one], followed by [task two].",
+            "Sessions lasted approximately [duration] and took place in [setting].",
+            "Participants were randomly assigned to either the [condition A] or [condition B] condition.",
+            "Randomization was performed using [method], with allocation concealed from [parties].",
+            "Interviews were audio-recorded with permission and transcribed verbatim.",
+            "Surveys were administered online via [platform].",
+            "Follow-up assessments were conducted at [time points].",
+            "To reduce [bias type], [procedural safeguard] was implemented.",
+            "Participants were debriefed at the conclusion of the study."
+          ]
+        },
+        {
+          "name": "Data analysis",
+          "phrases": [
+            "Analyses were conducted using [software, version].",
+            "Descriptive statistics were calculated for all study variables.",
+            "We used [statistical test] to examine differences between [groups] on [outcome].",
+            "[Regression type] regression was used to model the association between [X] and [Y], adjusting for [covariates].",
+            "Statistical significance was set at [alpha level].",
+            "Effect sizes were calculated as [effect size metric] and interpreted using [benchmark].",
+            "Missing data were handled using [method], with [percentage] of values missing overall.",
+            "Transcripts were analyzed using [analytic approach, e.g., reflexive thematic analysis] following [Author] ([year]).",
+            "Two coders independently coded [proportion] of transcripts; discrepancies were resolved through discussion.",
+            "Assumptions of [test] were checked and [met/addressed as follows].",
+            "Sensitivity analyses were conducted to assess the robustness of the findings to [alternative specification]."
+          ]
+        },
+        {
+          "name": "Ethics",
+          "phrases": [
+            "Ethical approval was granted by [committee] (reference [number]).",
+            "All procedures complied with [relevant standard or declaration].",
+            "Participation was voluntary, and participants could withdraw at any time without penalty.",
+            "Data were anonymized prior to analysis, and identifying details have been removed or altered.",
+            "Particular care was taken given the sensitive nature of [topic], including [safeguard].",
+            "Participants were provided with information about support services at the end of the session."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "name": "Results",
+      "subs": [
+        {
+          "name": "Introducing the results",
+          "phrases": [
+            "This section presents the findings in [number] parts.",
+            "We first report descriptive statistics, followed by the main analyses.",
+            "Sample characteristics are summarized in Table [number].",
+            "Preliminary analyses indicated that [preliminary finding].",
+            "Before addressing the main hypotheses, we examined [preliminary check].",
+            "Results are organized around the [number] research questions.",
+            "Three themes were identified in the qualitative data: [theme one], [theme two], and [theme three].",
+            "On average, participants reported [descriptive summary]."
+          ]
+        },
+        {
+          "name": "Reporting significant findings",
+          "phrases": [
+            "There was a significant [direction] association between [X] and [Y] ([statistics]).",
+            "Participants in the [condition] condition scored significantly higher on [outcome] than those in the [comparison] condition ([statistics]).",
+            "The model explained [percentage] of the variance in [outcome].",
+            "[Predictor] emerged as a significant predictor of [outcome] ([statistics]).",
+            "The effect remained significant after adjusting for [covariates].",
+            "Consistent with Hypothesis [number], [finding].",
+            "The interaction between [A] and [B] was significant, such that [description of interaction].",
+            "Post hoc comparisons revealed that [specific contrast] ([statistics]).",
+            "The effect size was [magnitude], indicating a [small/moderate/large] effect.",
+            "This pattern was consistent across [subgroups or time points]."
+          ]
+        },
+        {
+          "name": "Non-significant or unexpected results",
+          "phrases": [
+            "Contrary to expectations, [X] was not significantly associated with [Y] ([statistics]).",
+            "No significant differences were observed between groups on [variable] ([statistics]).",
+            "Hypothesis [number] was not supported.",
+            "The effect of [variable] did not reach statistical significance ([statistics]).",
+            "Unexpectedly, [unexpected finding].",
+            "The direction of the effect was opposite to that predicted.",
+            "Although the trend favored [direction], the difference was not statistically reliable.",
+            "Results for [secondary outcome] were inconclusive."
+          ]
+        },
+        {
+          "name": "Referring to tables and figures",
+          "phrases": [
+            "As shown in Table [number], [summary of content].",
+            "Figure [number] displays [description].",
+            "Means and standard deviations for all variables are presented in Table [number].",
+            "The pattern of results is illustrated in Figure [number].",
+            "Correlations among study variables appear in Table [number].",
+            "As can be seen in Figure [number], [trend or pattern].",
+            "Full model estimates are reported in Table [number].",
+            "Representative quotations for each theme are provided in Table [number]."
+          ]
+        },
+        {
+          "name": "Summarizing the results",
+          "phrases": [
+            "In sum, the results provide support for [hypothesis or claim].",
+            "Overall, [X] was related to [Y] in the expected direction, though the effect varied by [moderator].",
+            "Together, these findings indicate that [summary].",
+            "The qualitative findings complement the quantitative results by [contribution].",
+            "Two of the three hypotheses were supported.",
+            "The main findings can be summarized as follows: [summary]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "discussion",
+      "name": "Discussion",
+      "subs": [
+        {
+          "name": "Restating key findings",
+          "phrases": [
+            "This study examined [aim]. Three main findings emerged.",
+            "The principal finding of this study is that [finding].",
+            "Consistent with our hypotheses, we found that [finding].",
+            "The results demonstrate that [finding], extending prior work on [topic].",
+            "First and most notably, [key finding].",
+            "As predicted, participants who [condition] showed [outcome].",
+            "Our findings confirm that [finding] and further suggest that [additional insight].",
+            "The data revealed a clear pattern: [pattern]."
+          ]
+        },
+        {
+          "name": "Interpreting the findings",
+          "phrases": [
+            "One interpretation of this finding is that [interpretation].",
+            "This result may reflect [mechanism or process].",
+            "A possible explanation is that [explanation].",
+            "These findings are consistent with the idea that [theoretical claim].",
+            "Viewed through the lens of [theory], this pattern suggests [interpretation].",
+            "The association between [X] and [Y] may operate through [mediator or pathway].",
+            "It is plausible that [process] accounts for this effect.",
+            "This suggests that [implication], at least under [conditions].",
+            "An alternative explanation is that [alternative], although [reason it is less likely].",
+            "The findings imply that [implication], a possibility that warrants direct testing."
+          ]
+        },
+        {
+          "name": "Comparing with prior literature",
+          "phrases": [
+            "These results are consistent with previous findings that [prior finding] ([citations]).",
+            "Our findings align with [Author] ([year]), who reported [finding].",
+            "In contrast to [Author] ([year]), we did not observe [expected finding].",
+            "This discrepancy may stem from differences in [sample, measures, or context].",
+            "The present results extend earlier work by showing that [extension].",
+            "Whereas prior studies focused on [A], our data speak to [B].",
+            "These findings add to a growing body of evidence that [claim].",
+            "Our results replicate the core finding of [Author] ([year]) in a [new population or setting].",
+            "Taken alongside earlier studies, the evidence now suggests [updated conclusion].",
+            "The convergence across methods strengthens confidence in [conclusion]."
+          ]
+        },
+        {
+          "name": "Explaining unexpected results",
+          "phrases": [
+            "The absence of an effect for [variable] was unexpected.",
+            "Several factors may explain this null result.",
+            "It is possible that [measurement or design factor] attenuated the observed effect.",
+            "The study may have been underpowered to detect effects of this size.",
+            "Ceiling effects on [measure] may have restricted variability.",
+            "Contextual features of [setting] may have weakened the influence of [variable].",
+            "Alternatively, the theorized relationship may simply not hold in [population or context].",
+            "This unexpected pattern raises the possibility that [revised account]."
+          ]
+        },
+        {
+          "name": "Implications",
+          "phrases": [
+            "These findings have several implications for [practice, policy, or theory].",
+            "For practitioners, the results suggest that [practical implication].",
+            "At the policy level, the findings support [policy implication].",
+            "Theoretically, the results refine our understanding of [construct or process].",
+            "Programs targeting [outcome] may benefit from incorporating [component].",
+            "The findings underscore the importance of [factor] when designing [intervention or service].",
+            "Clinicians and educators should be aware that [implication].",
+            "If replicated, these results would suggest that [conditional implication].",
+            "The results caution against [common practice or assumption].",
+            "More broadly, this work highlights the value of [approach] for studying [phenomenon]."
+          ]
+        },
+        {
+          "name": "Limitations",
+          "phrases": [
+            "Several limitations should be noted.",
+            "First, the cross-sectional design precludes causal conclusions.",
+            "Second, the sample was drawn from [context], which may limit generalizability.",
+            "Reliance on self-report measures raises the possibility of [bias type].",
+            "The modest sample size limited power to detect small effects and subgroup differences.",
+            "Unmeasured confounding cannot be ruled out.",
+            "Attrition between [time one] and [time two] may have introduced selection effects.",
+            "The measure of [construct] captured [aspect] but not [other aspect].",
+            "Findings may not extend to [other populations or settings].",
+            "Despite these limitations, the study offers [strength or contribution]."
+          ]
+        },
+        {
+          "name": "Future research",
+          "phrases": [
+            "Future research should examine [question] using [stronger design].",
+            "Longitudinal studies are needed to establish the temporal ordering of [X] and [Y].",
+            "Replication in [other populations or settings] would strengthen confidence in these findings.",
+            "Experimental designs could clarify whether [causal question].",
+            "Future work might explore the mechanisms linking [X] to [Y], such as [candidate mechanisms].",
+            "Qualitative research could illuminate how [process] is experienced by [population].",
+            "Researchers should consider [methodological improvement] in subsequent studies.",
+            "An important next step is to test whether [intervention or manipulation] alters [outcome].",
+            "Examining [moderator] as a boundary condition is a promising direction.",
+            "Mixed-methods designs may be particularly well suited to addressing [open question]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "name": "Conclusion",
+      "subs": [
+        {
+          "name": "Summarizing the study",
+          "phrases": [
+            "In conclusion, this study examined [aim] and found that [key finding].",
+            "This paper set out to [aim]. The findings indicate that [conclusion].",
+            "Returning to the question posed at the outset, the evidence suggests that [answer].",
+            "Overall, the results support the view that [claim].",
+            "The study provides [qualified] evidence that [finding].",
+            "Three conclusions follow from this work: [one], [two], and [three].",
+            "In short, [concise restatement of the main conclusion].",
+            "The findings reported here offer a clearer picture of [phenomenon]."
+          ]
+        },
+        {
+          "name": "Stating contributions",
+          "phrases": [
+            "This study contributes to the literature by [contribution].",
+            "The primary contribution of this work is [contribution].",
+            "Methodologically, the study demonstrates the value of [approach].",
+            "The findings advance theory by [theoretical contribution].",
+            "This work provides a foundation for future research on [topic].",
+            "By documenting [finding], the study fills a notable gap in [literature].",
+            "The study offers practical tools for [audience], including [example].",
+            "These insights enrich current debates about [issue]."
+          ]
+        },
+        {
+          "name": "Final remarks",
+          "phrases": [
+            "Addressing [problem] will require sustained attention from [stakeholders].",
+            "As [field] continues to evolve, [topic] will remain a pressing concern.",
+            "Continued investment in [area] is warranted given [reason].",
+            "Ultimately, [closing thought].",
+            "We hope this work encourages further inquiry into [topic].",
+            "The challenge ahead lies in translating these findings into [application]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hedging",
+      "name": "Hedging and Caution",
+      "subs": [
+        {
+          "name": "Tentative claims",
+          "phrases": [
+            "These findings suggest that [claim].",
+            "It appears that [observation].",
+            "The data tend to support [claim].",
+            "It is likely that [claim], although [caveat].",
+            "This may indicate that [interpretation].",
+            "One possibility is that [possibility].",
+            "To some extent, [qualified claim].",
+            "The evidence points, albeit tentatively, toward [conclusion].",
+            "[X] seems to play a role in [Y], though the precise mechanism is unclear.",
+            "There is preliminary evidence that [claim].",
+            "Under certain conditions, [X] may contribute to [Y].",
+            "Caution is warranted when generalizing these findings beyond [scope].",
+            "These results should be interpreted as suggestive rather than definitive.",
+            "It would be premature to conclude that [strong claim]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "critical",
+      "name": "Being Critical",
+      "subs": [
+        {
+          "name": "Evaluating arguments and evidence",
+          "phrases": [
+            "A key weakness of this argument is [weakness].",
+            "This claim rests on the assumption that [assumption], which may not hold.",
+            "The evidence cited in support of [claim] is largely [type], and therefore [limitation].",
+            "While persuasive, this account does not explain [unexplained phenomenon].",
+            "The argument would be strengthened by [missing element].",
+            "[Author]'s ([year]) interpretation overlooks [overlooked factor].",
+            "It is questionable whether [claim] follows from the data presented.",
+            "An important counterargument is that [counterargument].",
+            "The distinction between [A] and [B] is blurred in this account.",
+            "More convincing is the view that [alternative position], because [reason]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dialogue",
+      "name": "Engaging Sources",
+      "subs": [
+        {
+          "name": "Presenting the standard view",
+          "phrases": [
+            "A common view in [field] holds that [claim].",
+            "Conventional wisdom suggests that [claim].",
+            "Many researchers take it for granted that [assumption].",
+            "The prevailing account of [phenomenon] emphasizes [factor].",
+            "It is widely believed that [claim], a view most closely associated with [Author] ([year]).",
+            "Discussions of [topic] often begin from the premise that [premise].",
+            "[Practitioners or group] tend to assume that [assumption].",
+            "Until recently, most work on [topic] proceeded as if [assumption] were settled.",
+            "One influential position holds that [claim]; a rival position counters that [counterclaim].",
+            "Debate on [topic] has largely centered on whether [question]."
+          ]
+        },
+        {
+          "name": "Summarizing and framing quotations",
+          "phrases": [
+            "[Author] ([year]) makes the case that [summary].",
+            "The heart of [Author]'s ([year]) argument is that [core claim].",
+            "As [Author] ([year]) puts it, \"[quotation]\" (p. [page]).",
+            "In [Author]'s ([year]) words: \"[quotation]\" (p. [page]).",
+            "In other words, [Author] is arguing that [restatement].",
+            "The point of this passage is that [interpretation].",
+            "[Author]'s claim here is narrower than it first appears: [clarification].",
+            "Summarized fairly, the opposing position is that [evenhanded summary].",
+            "What [Author] means by [term] is [explanation].",
+            "This quotation underscores [point], which matters here because [relevance]."
+          ]
+        },
+        {
+          "name": "Agreeing with a difference",
+          "phrases": [
+            "[Author] ([year]) is right that [claim], and the present findings reinforce that conclusion.",
+            "I share [Author]'s ([year]) view that [claim], though for somewhat different reasons.",
+            "The evidence reported here supports [Author]'s ([year]) contention that [claim].",
+            "[Author]'s ([year]) argument is persuasive, and it can be extended to [new domain].",
+            "Consistent with this position, our data show [finding].",
+            "This account rings true, particularly its emphasis on [element].",
+            "[Author] ([year]) deserves credit for drawing attention to [contribution].",
+            "Building on this insight, the present study adds [addition].",
+            "Endorsing this view does not require accepting [stronger claim]; the weaker claim that [claim] is sufficient here."
+          ]
+        },
+        {
+          "name": "Disagreeing with reasons",
+          "phrases": [
+            "[Author]'s ([year]) conclusion does not hold up under scrutiny because [reason].",
+            "This argument overlooks a crucial point: [point].",
+            "The claim that [claim] is difficult to square with [contrary evidence].",
+            "Contrary to [Author] ([year]), the data suggest [alternative].",
+            "This position rests on a questionable assumption, namely that [assumption].",
+            "The inference from [premise] to [conclusion] is not warranted, since [reason].",
+            "[Author] ([year]) conflates [A] with [B], which weakens the argument.",
+            "A closer reading of the evidence points in a different direction: [direction].",
+            "The problem with this view is not [surface issue] but [deeper issue].",
+            "If this account were correct, we would expect [prediction]; instead, [observed result]."
+          ]
+        },
+        {
+          "name": "Agreeing and disagreeing at once",
+          "phrases": [
+            "[Author] ([year]) is right about [point], but wrong to conclude that [conclusion].",
+            "Although I accept the premise that [premise], the conclusion that [conclusion] does not follow.",
+            "This view is persuasive up to a point; it falters when applied to [case].",
+            "There is merit in both positions: [position A] explains [X], while [position B] better accounts for [Y].",
+            "My argument is not that [claim] is false, but that it is incomplete.",
+            "While the framework usefully highlights [strength], it understates [neglected factor].",
+            "The disagreement here is narrower than it appears: both sides accept [shared ground] and differ only on [point of difference].",
+            "I concede [point] while maintaining that [main claim]."
+          ]
+        },
+        {
+          "name": "Marking who says what",
+          "phrases": [
+            "On my reading, [interpretation].",
+            "In what follows, I argue that [thesis].",
+            "My own view is that [claim], for the reasons developed below.",
+            "The argument advanced here differs from [Author]'s ([year]) in one key respect: [difference].",
+            "Whereas critics of [position] emphasize [point], the analysis presented here suggests [alternative].",
+            "To be clear, the claim is not [possible misreading] but [actual claim].",
+            "This is [Author]'s ([year]) position, not mine; my reasons for resisting it follow.",
+            "It is worth separating two claims: [claim A], which the literature supports, and [claim B], which this study contests.",
+            "The present argument should not be mistaken for [adjacent position]."
+          ]
+        },
+        {
+          "name": "Anticipating objections",
+          "phrases": [
+            "A skeptic might object that [objection].",
+            "One could reasonably ask whether [question].",
+            "The most serious objection to this argument is [objection].",
+            "Some will argue that [objection]; this concern is addressed below.",
+            "It might be countered that [counterargument]. Two considerations weigh against this.",
+            "Admittedly, [concession]. Even so, [response].",
+            "This objection has force, but it applies only when [condition].",
+            "Readers sympathetic to [position] may worry that [worry]; the data on [point] should ease that concern.",
+            "Anticipating this criticism, we conducted [robustness check].",
+            "The objection assumes [assumption], which the present findings call into question."
+          ]
+        },
+        {
+          "name": "Showing why it matters",
+          "phrases": [
+            "These findings matter because [reason].",
+            "The stakes of this debate extend beyond [narrow field] to [broader domain].",
+            "If the argument here is correct, then [consequence].",
+            "Readers concerned with [issue] have a direct interest in this question, since [link].",
+            "What hangs on this distinction is [practical consequence].",
+            "Settling this question would change how [practitioners] approach [task].",
+            "Far from a technical quibble, this issue bears on [larger concern].",
+            "The answer carries implications for [policy or practice], where [application].",
+            "At stake is whether [consequential question]."
+          ]
+        },
+        {
+          "name": "Metacommentary",
+          "phrases": [
+            "In other words, [restatement].",
+            "To put the point another way, [restatement].",
+            "The essence of the argument is this: [distilled claim].",
+            "What follows from this is not [possible misreading] but [correct implication].",
+            "To anticipate a later section, [preview].",
+            "This point will become important when we turn to [topic].",
+            "Lest the argument be misunderstood, [clarification].",
+            "So far, the discussion has established [summary]; the remaining question is [question]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "compare",
+      "name": "Comparing and Contrasting",
+      "subs": [
+        {
+          "name": "Similarities and differences",
+          "phrases": [
+            "[A] and [B] share several features, including [shared features].",
+            "Both approaches assume that [shared assumption].",
+            "Similarly, [parallel point].",
+            "[A] resembles [B] in that [point of similarity].",
+            "In contrast, [B] emphasizes [different emphasis].",
+            "Unlike [A], [B] does not require [requirement].",
+            "Whereas [A] focuses on [focus], [B] attends to [different focus].",
+            "The two perspectives diverge most sharply on the question of [issue].",
+            "A key difference lies in [dimension of difference].",
+            "On balance, [A] offers [advantage], while [B] is better suited to [use case].",
+            "These differences notwithstanding, both lines of work converge on [shared conclusion].",
+            "Compared with [B], [A] places greater weight on [factor]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "define",
+      "name": "Defining Terms",
+      "subs": [
+        {
+          "name": "Definitions and usage",
+          "phrases": [
+            "For the purposes of this study, [term] is defined as [definition].",
+            "[Term] refers to [definition] ([Author], [year]).",
+            "Following [Author] ([year]), we use [term] to mean [definition].",
+            "The term [term] is used here in its [broad/narrow] sense, encompassing [scope].",
+            "[Term] is commonly understood as [common definition], although definitions vary across [fields].",
+            "A distinction is drawn between [term A], meaning [definition A], and [term B], meaning [definition B].",
+            "In this paper, [term A] and [term B] are used interchangeably to refer to [referent].",
+            "Definitions of [term] differ in the extent to which they emphasize [dimension].",
+            "[Term] is operationalized in this study as [operational definition].",
+            "What counts as [term] is itself contested; here we adopt [chosen criterion]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "signpost",
+      "name": "Signposting and Transitions",
+      "subs": [
+        {
+          "name": "Moving between ideas",
+          "phrases": [
+            "Having established [previous point], we now turn to [next point].",
+            "This raises the question of [question].",
+            "Before addressing [next topic], it is worth noting [aside].",
+            "With this framework in place, the next section examines [topic].",
+            "A related issue concerns [issue].",
+            "Returning to the earlier point about [topic], [development].",
+            "As noted above, [restated point].",
+            "Building on this, [next step in the argument].",
+            "It follows that [consequence].",
+            "Against this backdrop, [new development or focus].",
+            "Two further considerations deserve attention.",
+            "To summarize the argument so far: [summary].",
+            "The discussion now shifts from [A] to [B].",
+            "An additional point merits emphasis: [point]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cause",
+      "name": "Cause and Effect",
+      "subs": [
+        {
+          "name": "Causal language",
+          "phrases": [
+            "[X] contributes to [Y] by [mechanism].",
+            "One consequence of [X] is [Y].",
+            "[X] gives rise to [Y] under [conditions].",
+            "As a result of [X], [Y].",
+            "[Y] can be attributed, at least in part, to [X].",
+            "[X] is a key driver of [Y] in [context].",
+            "The effect of [X] on [Y] is mediated by [mediator].",
+            "Because [reason], [outcome] tends to follow.",
+            "[X] increases the likelihood of [Y], particularly when [condition].",
+            "These factors interact to produce [outcome]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trends",
+      "name": "Trends and Quantities",
+      "subs": [
+        {
+          "name": "Describing data and change",
+          "phrases": [
+            "[Variable] increased from [value] in [year] to [value] in [year].",
+            "There was a marked decline in [variable] over the study period.",
+            "[Variable] remained relatively stable across [time frame].",
+            "Approximately [proportion] of participants reported [response].",
+            "The majority of respondents ([percentage]) indicated that [response].",
+            "Rates of [outcome] were [magnitude] higher in [group A] than in [group B].",
+            "[Variable] peaked at [value] before declining to [value].",
+            "A small but consistent upward trend was observed in [variable].",
+            "Fewer than [proportion] of cases involved [characteristic].",
+            "The distribution of [variable] was skewed toward [direction]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "classify",
+      "name": "Classifying and Listing",
+      "subs": [
+        {
+          "name": "Categories and enumeration",
+          "phrases": [
+            "[Phenomenon] can be classified into [number] types: [list].",
+            "Three broad categories emerged from the analysis: [one], [two], and [three].",
+            "[Items] fall into two groups according to [criterion].",
+            "The first category comprises [description]; the second includes [description].",
+            "This typology distinguishes [types] on the basis of [dimension].",
+            "Several factors are relevant here, namely [list].",
+            "These elements can be ordered by [ordering principle], from [low end] to [high end].",
+            "A final category, less common but notable, involves [description]."
+          ]
+        }
+      ]
+    }
+  ]
+}
